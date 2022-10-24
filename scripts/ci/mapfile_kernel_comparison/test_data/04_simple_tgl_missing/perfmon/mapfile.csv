@@ -1,0 +1,5 @@
+Family-model,Version,Filename,EventType,Core Type,Native Model ID,Core Role Name
+GenuineIntel-6-9E,V53,/SKL/skylake_core_v53.json,core,,,
+GenuineIntel-6-9E,V53,/SKL/skylake_matrix_v53.json,offcore,,,
+GenuineIntel-6-9E,V53,/SKL/skylake_uncore_v53.json,uncore,,,
+GenuineIntel-6-9E,V53,/SKL/skylake_fp_arith_inst_v53.json,fp_arith_inst,,,

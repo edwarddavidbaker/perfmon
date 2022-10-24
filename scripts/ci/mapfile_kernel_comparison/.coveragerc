@@ -1,0 +1,12 @@
+[run]
+branch = True
+
+[report]
+include =
+    mapfile_kernel_comparison.py
+
+exclude_lines =
+    if __name__ == .__main__.:
+
+[html]
+directory = coverage_html_report
