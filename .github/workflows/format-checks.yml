@@ -1,6 +1,6 @@
-# This workflow will setup Python, run unittests, and execute verify_mapfile.py.
+# This workflow verifies files are properly formatted.
 
-name: Verify mapfile.csv
+name: Run format checks
 
 on:
   push:
@@ -10,6 +10,7 @@ permissions:
   contents: read
 
 jobs:
+  # This job validates that mapfile.csv is correctly formatted and configured.
   verify-mapfile:
     runs-on: ubuntu-latest
 
@@ -34,3 +35,15 @@ jobs:
 
     - name: Validate mapfile.csv
       run: python verify_mapfile.py
+
+  # This job runs csvlinter to validate CSV file formatting.
+  csvlinter:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout perfmon
+      uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
+
+    - uses: csvlinter/csvlinter-action@eb248038c8222e82b83f9585233f308780c2147b # v1.0.1
+      with:
+        paths: "scripts/config/perf-uncore-events-*.csv"
